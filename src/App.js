@@ -1,15 +1,12 @@
-import Dropzone from './components/Dropzone/dropzone.js'
+import React from 'react';
+import Routes from './routes';
 
-function test(){
-  console.log('aqui')
-}
-
-export default function App() {
+function App () {
   return (
-    <div className="App">
-      <Dropzone></Dropzone>
-      <div onClick={() =>test()}>teste</div>
-
-    </div>
+    <div>
+        <Routes />
+    </div>    
   );
-}
+};
+
+export default App;
