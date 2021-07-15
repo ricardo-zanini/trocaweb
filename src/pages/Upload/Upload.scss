@@ -1,0 +1,16 @@
+
+.alignCenter{
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content:center;
+}
+
+//Css elementos
+body{
+    @extend .alignCenter;
+    min-height:100vh;
+    display:flex;
+}
+
+//Css classes

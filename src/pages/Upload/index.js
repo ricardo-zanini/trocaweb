@@ -1,10 +1,9 @@
-import Dropzone from '../../components/Dropzone/dropzone.js'
-
+import Dropzone from '../../components/Dropzone/dropzone/dropzone.js'
 function test(){
   console.log('aqui')
 }
 
-export default function Upoload() {
+export default function Upload() {
   return (
     <div className="App">
       <Dropzone></Dropzone>
