@@ -1,6 +1,14 @@
+$cinza3:#a8a8a8;
+$cinza2:#cfcfcf;
+
 .dropzone{
-  border: 1px solid #000000;
+  border: 2px dashed $cinza2;
+  color:$cinza2;
   text-align: center;
   justify-content: center;
   display: flex;
+  cursor:pointer;
+}
+.paragrafoDropzone{
+  padding-top:15px;
 }

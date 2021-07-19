@@ -1,16 +1,294 @@
 
-.alignCenter{
+$branco:#ffffff;
+$cinza1:#f2f2f2;
+$cinza2:#cfcfcf;
+$cinza3:#a8a8a8;
+$cinza4:#818181;
+$vermelho1:#ff6e6e;
+$vermelho2:#ff5757;
+$vermelho3:#ff2b2b;
+$vermelhoOpacity50:rgba(255, 43, 43,0.5);
+$azul1:#38568a;
+
+
+
+body,html{
+    font-family: 'Montserrat';
+    
+}
+
+
+
+.containerGrid{
+    display:grid;
+    min-height: 100vh;
+    grid-template-columns: [first] 200px [line2] auto [end];
+    grid-template-rows: [row1-start] 10vh [row1-end] 80vh [third-line] 10vh [last-line];
+}
+.headerUpload{
     display:flex;
-    flex-direction:row;
+    justify-content: space-between;
+    position:absolute;
+    width:100%;
+    height:40px;
+    background-color:$vermelho1;
+    box-shadow: 0px 3px 10px 0.2px $vermelhoOpacity50;
+    z-index:1000;
+  }
+.navUpload{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: last-line;
+    background-color:$cinza1;
+    padding-top:40px;
+    overflow:auto;
+}
+.mainUpload{
+    grid-column-start: 2;
+    grid-column-end: end;
+    grid-row-start: 1;
+    grid-row-end: third-line;
+    padding-top:40px;
+    margin-left:10px;
+    margin-top:10px;
+    overflow-y:scroll;
+}
+.footerUpload{
+    grid-column-start: 2;
+    grid-column-end: end;
+    grid-row-start: third-line;
+    grid-row-end: last-line;
+    background-color:$cinza2;
+    display:flex;
+    align-items:center;
+}
+
+.logotipoHeader{
+    display:flex;
+    align-items:center;
+    height:100%;
+    width:160px;
+    padding:0px 0px 0px 20px;
+    font-size:1.2rem;
+    color:$branco;
+    background-color: $vermelho2;
+    clip-path: polygon(0 0, 85% 0, 100% 50%, 85% 100%, 0 100%);
+    cursor:pointer;
+}
+
+.esconderNav{
+    position: absolute;
+    width:20px;
+    height:20px;
+    font-size:1.5rem;
+    font-weight:900;
+    font-family: 'Manrope', sans-serif;
+    color:$vermelho1;
+    padding:10px;
+    cursor:pointer;
+}
+
+.containerArquivo{
+    display:flex;
+    align-items:center;
+    flex-direction: row;
+    min-width:100%;
+    height:50px;
+    border-bottom:solid 1px $cinza1;
+}
+@media screen and (max-width: 400px) {
+    .containerGrid{
+        grid-template-columns: [first] 50% [line2] auto [end];
+    }
+    .footerUpload{
+        grid-column-start: 1;
+    }
+    .navUpload{
+
+        grid-row-end: 3;
+
+    }
+}
+.nomeArquivo{
+    width:200px;
+    font-size:1rem;
+    color:$cinza3
+}
+.iconeArquivo{
+    padding-right:20px;
+    img{
+        width:25px;
+        filter: invert(80%)
+    }
+}
+.excluirArquivo{
+    
+    color:$vermelho3;
+    cursor:pointer;
+    margin-left:20px;
+}
+.iconesFooter{
+    padding:1vh;
+    img{
+        width:7vh;
+        filter: invert(50%);
+        cursor:pointer;
+    }
+}
+.buscar{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    img{
+        width:40px;
+        height:40px;
+        padding:10px;
+        filter: invert(100%)
+    }
+}
+//--------------- CSS Modais ----------------
+
+@keyframes surgir {
+    from { opacity: 0}
+    to   { opacity: 1}
+}
+
+.containerModal{
+    width:400px;
+    height:100%;
+    margin-top:70px;
+    background-color:$cinza1;
+    border-radius:5px;
+    animation: surgir 0.5s;
+}
+.telaEscurecida{
+    display:flex;
+    justify-content:center;
+    z-index:2000;
+    position:absolute;
+    min-width: 100vw;
+    min-height:100vh;
+    background-color:rgba(0, 0, 0, 0.2);
+    transition:0.5s;
+}
+.modalUploadSessao1{
+    display:flex;
     align-items:center;
     justify-content:center;
+    padding:15px;
+    border-bottom:solid 1px $cinza2;
+    h5{
+        color:$cinza4;
+        line-height:100%;
+    }
 }
-
-//Css elementos
-body{
-    @extend .alignCenter;
-    min-height:100vh;
+.modalUploadSessao2{
+    
+    padding:10px;
+    border-bottom:solid 1px $cinza2;
+    p{
+        padding-top:10px;
+        text-align:center;
+        font-size:0.9rem;
+        color:$cinza3
+    }
+}
+.modalUploadSessao3{
+    padding:15px;
     display:flex;
+    align-items:center;
+    justify-content:flex-end;
+    gap:20px;
+    .btn{
+        height:40px !important;
+        
+    }
 }
+ //------------ Checkbox -------------------
+.containerCheckboxMaior{
+    
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+    margin-right:20px;
+    width:100%;
+    height:100%;
+}
+ /* The containerRadio */
+.containerRadio {
+    display: block;
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 30px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Hide the browser's default radio button */
+  .containerRadio input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  /* Create a custom radio button */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .containerRadio:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  
+  /* When the radio button is checked, add a blue background */
+  .containerRadio input:checked ~ .checkmark {
+    background-color: $vermelho1;
+  }
+  
+  /* Create the indicator (the dot/circle - hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the indicator (dot/circle) when checked */
+  .containerRadio input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the indicator (dot/circle) */
+  .containerRadio .checkmark:after {
+        top: 9px;
+      left: 9px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: white;
+  }
 
-//Css classes
+
+  /* Works on Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 1vw;
+  }
+  
+  *::-webkit-scrollbar-track {
+    background: $cinza1;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background-color: $cinza2;
+  }
