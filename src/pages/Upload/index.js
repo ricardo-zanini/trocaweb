@@ -25,7 +25,7 @@ export default function Upload() {
             </div>
         </header>
         <nav className="navUpload">
-            <div className="esconderNav">></div>
+            <div className="esconderNav">&gt;</div>
         </nav>
         <main className="mainUpload">
         <ArquivoUpload></ArquivoUpload>
