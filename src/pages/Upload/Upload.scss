@@ -18,7 +18,27 @@ $azul1:#38568a;
     from { width: 0}
     to   { width: 100%}
 }
+//-------------------------- Mostrar/Ocultar Nav------------------------
+.showNav{
+    display:block;
+    transition:0.5s;
 
+}
+.hiddenNav{
+    visibility:hidden;
+    .esconderNav{
+        visibility:visible;
+        transition:0.5s;
+    }
+    
+}
+//-----------------------!!!!!!CONTINUAR!!!!!------------------------------
+.mainCompleto{
+    
+}
+.mainMetade{
+
+}
 //----------------------------- Grid -----------------------------------
 
 .containerGrid{
@@ -35,7 +55,7 @@ $azul1:#38568a;
     height:40px;
     background-color:$vermelho1;
     box-shadow: 0px 3px 10px 0.2px $vermelhoOpacity50;
-    z-index:1000;
+    z-index:100;
   }
 .navUpload{
     grid-column-start: 1;
@@ -69,13 +89,32 @@ $azul1:#38568a;
 .logotipoHeader{
     display:flex;
     align-items:center;
+    position:absolute;
     height:100%;
     width:160px;
     padding:0px 0px 0px 20px;
     font-size:1.2rem;
     color:$branco;
-    background-color: $vermelho2;
+    background-color: $vermelho3;
     clip-path: polygon(0 0, 85% 0, 100% 50%, 85% 100%, 0 100%);
+    z-index:300;
+}
+.headerEsquerda{
+    display:flex;
+}
+.headerUsuarios{
+    @extend .logotipoHeader;
+    position:relative !important;
+    width:140px;
+    padding-left:40px;
+    left:130px;
+    background-color: $vermelho2;
+    z-index:200;
+    div{
+        font-size:1rem;
+    }
+}
+.logotipoHeaderTexto{
     cursor:pointer;
 }
 
@@ -113,6 +152,15 @@ $azul1:#38568a;
         grid-row-end: 3;
 
     }
+}
+@media screen and (max-width: 300px){
+    .headerUsuarios{
+        left:0;
+        top:40px
+     }
+     .headerEsquerda{
+         flex-wrap:wrap;
+     }
 }
 .nomeArquivo{
     width:200px;

@@ -1,5 +1,5 @@
 
-import {useState} from "react";
+import React,{useState} from "react";
 
 
 export default function ArquivoUpload() {
@@ -19,7 +19,7 @@ export default function ArquivoUpload() {
               </div>
               <div className="containerCheckboxMaior">
                     <label className="containerRadio">
-                    <input type="radio" checked={checked} onChange={() => setChecked(!checked)} name="radio"/>
+                    <input type="checkbox" checked={checked} onChange={() => setChecked(!checked)} name="radio"/>
                     <span className="checkmark"></span>
                     </label>
                 </div>  

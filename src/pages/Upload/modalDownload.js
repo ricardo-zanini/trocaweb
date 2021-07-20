@@ -1,5 +1,4 @@
 
-import Dropzone from '../../components/Dropzone/dropzone/dropzone.js'
 import {Button} from 'react-bootstrap';
 
 

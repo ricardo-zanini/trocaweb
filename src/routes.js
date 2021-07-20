@@ -10,8 +10,8 @@ export default function Routes(){
     return(
         <>
          <BrowserRouter>
-                <Route path="/Upload" component={Upload} />
-                <Route path="/" component={Login} />
+                <Route exact path="/Upload" component={Upload} />
+                <Route exact path="/" component={Login} />
           </BrowserRouter>
         </>
     );
