@@ -1,5 +1,5 @@
 
-import {useState} from "react";
+import React,{useState} from "react";
 
 
 export default function ArquivoUpload() {
@@ -11,16 +11,16 @@ export default function ArquivoUpload() {
               <div className="iconeArquivo">
                   <img alt="arquivo" src="../../imgs/arquivo.png"/>
               </div>
-              <div class="nomeArquivo">
+              <div className="nomeArquivo">
                 Exemplo 1
               </div>
               <div className="excluirArquivo">
                 Excluir
               </div>
               <div className="containerCheckboxMaior">
-                    <label class="containerRadio">
-                    <input type="radio" checked={checked} onClick={() => setChecked(!checked)} name="radio"/>
-                    <span class="checkmark"></span>
+                    <label className="containerRadio">
+                    <input type="checkbox" checked={checked} onChange={() => setChecked(!checked)} name="radio"/>
+                    <span className="checkmark"></span>
                     </label>
                 </div>  
             </div>

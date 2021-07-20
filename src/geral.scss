@@ -1,5 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&display=swap');
 @import "~bootstrap/scss/bootstrap";
+
+$branco:#ffffff;
+$cinza1:#f2f2f2;
+$cinza2:#cfcfcf;
+$cinza3:#a8a8a8;
+$cinza4:#818181;
+$vermelho1:#ff6e6e;
+$vermelho2:#ff5757;
+$vermelho3:#ff2b2b;
+$vermelhoOpacity50:rgba(255, 43, 43,0.5);
+$azul1:#38568a;
+
 * {
     padding: 0;
     margin: 0;
@@ -10,11 +22,18 @@
 html,
 body {
     height: 100%;
+    font-family: 'Montserrat';
 }
 html{
     scroll-behavior: smooth;
 }
+
+//--------------------------- Button -------------------------------
+
 .btn-success{
     background-color: rgb(94, 196, 94) !important;
     border:none !important;
+}
+.btn-success:hover{
+    background-color:rgb(103, 212, 103) !important;
 }
