@@ -1,4 +1,6 @@
-// verifica se está logado
+import Cookies from 'universal-cookie';
+const cookies = new Cookies();
+
 export async function auth(){
     
     const myHeaders = new Headers();

@@ -1,11 +1,10 @@
-
 import React,{useState} from 'react';
 import "./Upload.scss"
 import ArquivoUpload from './arquivoUpload'
 import ModalUpload from './modalUpload'
 import ModalDownload from './modalDownload'
 import Buscar from './buscar'
-
+import { auth } from '../../api/auth'
 
 export default function Upload() {
   const [modalUpload, setModalUpload] = useState(false);
