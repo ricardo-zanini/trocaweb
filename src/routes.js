@@ -11,7 +11,7 @@ export default function Routes(){
         <>
          <BrowserRouter>
                 <Route path="/Upload" component={Upload} />
-                <Route path="/Login" component={Login} />
+                <Route path="/" component={Login} />
           </BrowserRouter>
         </>
     );

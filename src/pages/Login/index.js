@@ -1,14 +1,17 @@
+import React,{useState} from 'react';
 import "./login.scss"
 import { Form, Button } from 'react-bootstrap';
-
+import ModalSenha from './modalSenha'
 
 export default function Login() {
+  const [modalSenha, setModalSenha] = useState(false);
     return (
       <>
+      <ModalSenha modalSenha={modalSenha} setModalSenha={setModalSenha}/>
         <div className="fundoPaginaLogin"></div>
         <div className="containerPaginaLogin">
         <div className="logotipo">HOS</div>
-          <div class="container">
+          <div className="container">
           <hr/>
           <Form>
             <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -25,7 +28,7 @@ export default function Login() {
             </Button>
           </Form>
           </div>
-          <a href="#" className="link" >Esqueceu sua senha?</a>
+          <p onClick={()=>setModalSenha(!modalSenha)} href="#" className="link" >Esqueceu sua senha?</p>
         </div>
       </>
     );

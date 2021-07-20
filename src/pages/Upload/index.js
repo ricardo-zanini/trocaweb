@@ -4,12 +4,13 @@ import "./Upload.scss"
 import ArquivoUpload from './arquivoUpload'
 import ModalUpload from './modalUpload'
 import ModalDownload from './modalDownload'
-
+import Buscar from './buscar'
 
 
 export default function Upload() {
   const [modalUpload, setModalUpload] = useState(false);
   const [modalDownload, setModalDownload] = useState(false);
+  const [buscar, setBuscar] = useState(false);
 
   return (
   <>
@@ -21,7 +22,8 @@ export default function Upload() {
                 <div className="logotipoHeaderTexto">Troca<b >Web</b></div>
             </div>
             <div className="buscar">
-              <img src="https://image.flaticon.com/icons/png/512/14/14073.png"/>
+              <img onClick={()=>setBuscar(!buscar)} src="https://image.flaticon.com/icons/png/512/14/14073.png"/>
+              <Buscar buscar={buscar} setbuscar={setBuscar}/>
             </div>
         </header>
         <nav className="navUpload">
