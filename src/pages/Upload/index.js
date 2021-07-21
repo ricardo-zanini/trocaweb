@@ -1,11 +1,10 @@
-
 import React,{useState} from 'react';
 import "./Upload.scss"
 import ArquivoUpload from './arquivoUpload'
 import ModalUpload from './modalUpload'
 import ModalDownload from './modalDownload'
 import Buscar from './buscar'
-
+import { auth } from '../../api/auth'
 
 export default function Upload() {
   const [modalUpload, setModalUpload] = useState(false);
@@ -44,7 +43,7 @@ export default function Upload() {
             </div>
         </header>
         <nav className={"navUpload "+ (navMostrar ? 'showNav' : 'hiddenNav')} >
-            <div onClick={() => clickEvent()} className="esconderNav">></div>
+            <div onClick={() => clickEvent()} className="esconderNav">&gt;</div>
         </nav>
         <main className={"mainUpload " + (navMostrar ? 'mainCompleto' : 'mainMetade')}>
         <ArquivoUpload></ArquivoUpload>

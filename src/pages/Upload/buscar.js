@@ -5,7 +5,7 @@ export default function Buscar(props) {
         case true:
             return (
                 <>
-                <Form.Control className="inputBuscar"size="sm" type="text" placeholder="Procure um arquivo..." />
+                <Form.Control className="inputBuscar" size="sm" type="text" placeholder="Procure um arquivo..." />
                 </>
             );
         break;
