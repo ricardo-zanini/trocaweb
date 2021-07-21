@@ -7,15 +7,15 @@ export default function ModalDonwload(props) {
         case true:
             return (
                 <>
-                <div class="telaEscurecida">
-                    <div class="containerModal">
-                        <div class="modalUploadSessao1">
+                <div className="telaEscurecida">
+                    <div className="containerModal">
+                        <div className="modalUploadSessao1">
                             <h5>Download de Arquivos</h5>
                         </div>
-                        <div class="modalUploadSessao2">
+                        <div className="modalUploadSessao2">
                         <p>Deseja fazer Download dos arquivos selecionados?</p>
                         </div>
-                        <div class="modalUploadSessao3">
+                        <div className="modalUploadSessao3">
                             <Button variant="success">Confirmar</Button>
                             <Button onClick={()=>props.chanceVisibility(!props.visibility)}variant="danger">Cancelar</Button>
                         </div>

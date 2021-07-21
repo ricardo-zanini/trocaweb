@@ -12,22 +12,27 @@ export default function Upload() {
   const [buscar, setBuscar] = useState(false);
   const [navMostrar, setNavMostrar] = useState(true);
 
-    function clickEvent (){
+    function clickEventEscondeNav(){
         setNavMostrar(!navMostrar)
         console.log(navMostrar)
 
     }
-    function mudaGrid(e){
-        if(e==true){
-            return ({})
+    const mudaGrid=(e) =>{
+        if(e==false){
+            return ({gridTemplateColumns: "[first] 0px [line2] auto [end]"})
+        }else{
+            return ({gridTemplateColumns: "[first] 200px [line2] auto [end]"})
         }
     }
-    
+
+
   return (
   <>
   <ModalUpload visibility={modalUpload} chanceVisibility={setModalUpload}/>
   <ModalDownload visibility={modalDownload} chanceVisibility={setModalDownload}/>
     <div className="containerGrid" style={mudaGrid(navMostrar)}>
+
+
         <header className="headerUpload">
             <div className="headerEsquerda">
                 <div className="logotipoHeader notranslate">
@@ -42,10 +47,14 @@ export default function Upload() {
               <Buscar buscar={buscar} setbuscar={setBuscar}/>
             </div>
         </header>
-        <nav className={"navUpload "+ (navMostrar ? 'showNav' : 'hiddenNav')} >
-            <div onClick={() => clickEvent()} className="esconderNav">&gt;</div>
+
+
+        <nav className={"navUpload " + (navMostrar ? 'navShow' : 'navOculto')}>
+            <div onClick={() => clickEventEscondeNav()} className="esconderNav ">{'>'}</div>
         </nav>
-        <main className={"mainUpload " + (navMostrar ? 'mainCompleto' : 'mainMetade')}>
+
+
+        <main className="mainUpload">
         <ArquivoUpload></ArquivoUpload>
             <div className="containerArquivo"></div>
             <div className="containerArquivo"></div>
@@ -56,6 +65,8 @@ export default function Upload() {
             <div className="containerArquivo"></div>
             <div className="containerArquivo"></div>
         </main>
+
+
         <footer className="footerUpload">
             <div className="iconesFooter">
                 <img onClick={()=> setModalDownload(!modalDownload)}src="https://image.flaticon.com/icons/png/512/3143/3143061.png"/>
@@ -64,6 +75,8 @@ export default function Upload() {
                 <img onClick={()=> setModalUpload(!modalUpload)}src="https://image.flaticon.com/icons/png/512/3143/3143050.png"/>
             </div>
         </footer>
+
+
     </div>
     </>
   );

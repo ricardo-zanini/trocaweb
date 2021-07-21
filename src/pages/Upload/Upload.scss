@@ -18,27 +18,7 @@ $azul1:#38568a;
     from { width: 0}
     to   { width: 100%}
 }
-//-------------------------- Mostrar/Ocultar Nav------------------------
-.showNav{
-    display:block;
-    transition:0.5s;
 
-}
-.hiddenNav{
-    visibility:hidden;
-    .esconderNav{
-        visibility:visible;
-        transition:0.5s;
-    }
-    
-}
-//-----------------------!!!!!!CONTINUAR!!!!!------------------------------
-.mainCompleto{
-    
-}
-.mainMetade{
-
-}
 //----------------------------- Grid -----------------------------------
 
 .containerGrid{
@@ -46,6 +26,7 @@ $azul1:#38568a;
     min-height: 100vh;
     grid-template-columns: [first] 200px [line2] auto [end];
     grid-template-rows: [row1-start] 10vh [row1-end] 80vh [third-line] 10vh [last-line];
+    animation: surgirWidth 1s;
 }
 .headerUpload{
     display:flex;
@@ -65,6 +46,7 @@ $azul1:#38568a;
     background-color:$cinza1;
     padding-top:40px;
     overflow:auto;
+    transition: 0.5s;
 }
 .mainUpload{
     grid-column-start: 2;
@@ -127,6 +109,7 @@ $azul1:#38568a;
     font-family: 'Manrope', sans-serif;
     color:$vermelho1;
     padding:10px;
+    z-index:2000;
     cursor:pointer;
 }
 
