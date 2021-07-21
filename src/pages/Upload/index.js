@@ -18,12 +18,17 @@ export default function Upload() {
         console.log(navMostrar)
 
     }
+    function mudaGrid(e){
+        if(e==true){
+            return ({})
+        }
+    }
     
   return (
   <>
   <ModalUpload visibility={modalUpload} chanceVisibility={setModalUpload}/>
   <ModalDownload visibility={modalDownload} chanceVisibility={setModalDownload}/>
-    <div className="containerGrid">
+    <div className="containerGrid" style={mudaGrid(navMostrar)}>
         <header className="headerUpload">
             <div className="headerEsquerda">
                 <div className="logotipoHeader notranslate">
@@ -41,7 +46,7 @@ export default function Upload() {
         <nav className={"navUpload "+ (navMostrar ? 'showNav' : 'hiddenNav')} >
             <div onClick={() => clickEvent()} className="esconderNav">></div>
         </nav>
-        <main className={"mainUpload" + (navMostrar ? 'mainCompleto' : 'mainMetade')}>
+        <main className={"mainUpload " + (navMostrar ? 'mainCompleto' : 'mainMetade')}>
         <ArquivoUpload></ArquivoUpload>
             <div className="containerArquivo"></div>
             <div className="containerArquivo"></div>
